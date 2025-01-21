@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 10px; /* Added margin to ensure display doesn't touch body edges */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+
+.calculator {
+  width: 90%;
+  max-width: 400px;
+  background: linear-gradient(145deg, #ffffff, #f2f2f2);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.display {
+  background: linear-gradient(145deg, #222, #333);
+  color: #fff;
+  text-align: right;
+  font-size: 2rem;
+  height: 80px;
+  padding: 20px;
+  text-align: start;
+  border-bottom: 2px solid #444;
+  border-radius: 15px 15px 0 0;
+  border: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 15px;
+  background: #f7f7f7;
+  border-radius: 0 0 15px 15px;
+}
+
+.button {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border: none;
+  padding: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.button:active {
+  background: linear-gradient(145deg, #dcdcdc, #bdbdbd);
+  transform: scale(0.95);
+}
+
+.button.operator {
+  background: linear-gradient(145deg, #ffb74d, #ff9800);
+  color: #fff;
+}
+
+.button.operator:active {
+  background: linear-gradient(145deg, #ff9800, #e65100);
+  transform: scale(0.95);
+}
+
+.button.equal {
+  background: linear-gradient(145deg, #66bb6a, #43a047);
+  color: #fff;
+  grid-column: span 4;
+  border-radius: 10px;
+}
+
+.button.equal:active {
+  background: linear-gradient(145deg, #43a047, #2e7d32);
+  transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+  .display {
+    font-size: 1.5rem;
+    height: 60px;
+    padding: 10px;
+  }
+
+  .button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
